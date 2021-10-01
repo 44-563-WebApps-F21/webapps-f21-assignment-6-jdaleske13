@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <title>Daleske's Passphrase Assignment 6</title>
+<body>
+
+<h1>Passphrase By: Jacob Daleske</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_pass">Enter the secret phrase </label>
+    <input type ="password" id="form1_pass" name="form1_pass" value="Let me in"> <br>
+
+    <label for="form1_check">Enter phrase </label>
+    <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+correct = 0
+wrong = 0
+
+function processPhrase(){
+    secret = document.getElementById("form1_pass").value
+    check = document.getElementById("form1_check").value
+
+    if(secret == check){
+        correct += 1
+        alert("Access Allowed")
+    }
+    else {
+        wrong += 1
+        alert("Access Denied")
+    }
+    
+    
+    document.getElementById("result").innerHTML = "Correct:" + correct +" Wrong:" + wrong
+}
+</script>
+
+</body>
+</html> 

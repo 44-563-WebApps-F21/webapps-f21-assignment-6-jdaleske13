@@ -22,8 +22,22 @@
     <input type="button" onclick="orderCar()" value="Order a Car">
 </form>
 
-
 <p id="result">This text will be replaced </p>
+
+<form>
+    <br>
+    <input type="text" id="color" value="color">
+    <label for="color">Enter a property</label>
+    <br>
+
+    <input type="text" id="property" value="property">
+    <label for="property">Enter a value</label>
+    <br>
+
+    <input type="button" onclick="updateCar()" value="Update Car">
+
+</form>
+
 
 <script> 
 
@@ -51,6 +65,15 @@ function orderCar(){
     }
 
     document.getElementById("result").innerHTML = "Electric: " +my_car.electric + " AC: " + my_car.ac + " GPS: " + my_car.gps
+}
+
+function updateCar() {
+    color = document.getElementById("color").value
+    property = document.getElementById("property").value
+
+    my_car["property"] = color + " " + property
+
+    document.getElementById("result").innerHTML = my_car.property
 }
 </script>
 

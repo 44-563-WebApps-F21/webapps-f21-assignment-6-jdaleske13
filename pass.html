@@ -20,10 +20,14 @@
 
 <p id="result">This text will be replaced </p>
 
+<div>
+    <img id="newImage" src="shark.jpg" alt="added picture" height="200" width="200" onclick="newImage()">
+</div>
+
 <script> 
 
-correct = 0
-wrong = 0
+var correct = 0
+var wrong = 0
 
 function processPhrase(){
     secret = document.getElementById("form1_pass").value
@@ -41,6 +45,27 @@ function processPhrase(){
     
     document.getElementById("result").innerHTML = "Correct:" + correct +" Wrong:" + wrong
 }
+</script>
+
+<script>
+    var usingImage = 1
+
+    function newImage(){
+        switch (usingImage) {
+            case 1:
+                document.getElementById("newImage").src = "elephant.jpg"
+                usingImage = 2
+                break
+            case 2:
+                document.getElementById("newImage").src = "Kangaroo.jpg"
+                usingImage = 3
+                break
+            case 3:
+                document.getElementById("newImage").src = "shark.jpg"
+                usingImage = 1
+                break
+        }
+    }
 </script>
 
 </body>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <title>Cars go Vroom</title>
+<body>
+
+<h2>Jacob Daleske orders a car</h2>
+
+<form>
+    <input type="checkbox" id="electric" value="electric">
+    <label for="box">electric</label>
+    <br>
+
+    <input type="checkbox" id="ac" value="ac">
+    <label for="ac">ac</label>
+    <br>
+
+    <input type="checkbox" id="gps" value="gps">
+    <label for="gps">gps</label>
+    <br>
+    <br>
+
+    <input type="button" onclick="orderCar()" value="Order a Car">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let my_car = {}
+
+function orderCar(){
+    my_car = {}
+    if (document.getElementById("electric").checked){
+        my_car["electric"] = "true"
+    }
+    else{
+        my_car["electric"] = "false"
+    }
+    if (document.getElementById("ac").checked){
+        my_car["ac"] = "true"
+    }
+    else {
+        my_car["ac"] = "false"
+    }
+    if (document.getElementById("gps").checked){
+        my_car["gps"] = "true"
+    }
+    else {
+        my_car["gps"] = "false"
+    }
+
+    document.getElementById("result").innerHTML = "Electric: " +my_car.electric + " AC: " + my_car.ac + " GPS: " + my_car.gps
+}
+</script>
+
+</body>
+</html> 
